@@ -1,0 +1,5 @@
+com\rancho_smart\ms_produccion_leche\Controller\LecheRestController.class
+com\rancho_smart\ms_produccion_leche\Service\LecheService.class
+com\rancho_smart\ms_produccion_leche\Entity\Leche.class
+com\rancho_smart\ms_produccion_leche\MsProduccionLecheApplication.class
+com\rancho_smart\ms_produccion_leche\Repository\LecheRepository.class
