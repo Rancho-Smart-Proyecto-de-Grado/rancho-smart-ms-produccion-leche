@@ -19,6 +19,18 @@ public class ProduccionLecheService {
         return this.produccionLecheRepository.findAll();
     }
 
+    public List<ProduccionLeche> getProduccionLecheByIdAnimal(Long idAnimal){
+        return this.produccionLecheRepository.findByIdAnimal(idAnimal);
+    }
+
+    public List<ProduccionLeche> getProduccionLecheByIdFinca(Long idFinca){
+        return this.produccionLecheRepository.findByIdFinca(idFinca);
+    }
+
+    public List<ProduccionLeche> getProduccionLecheByIdLote(Long idLote){
+        return this.produccionLecheRepository.findByIdLote(idLote);
+    }
+    
     public Optional<ProduccionLeche> getProduccionLecheById(Long id) {
         return this.produccionLecheRepository.findById(id);
     }

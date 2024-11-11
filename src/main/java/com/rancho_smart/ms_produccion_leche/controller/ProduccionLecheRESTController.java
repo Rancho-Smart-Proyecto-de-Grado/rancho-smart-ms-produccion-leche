@@ -31,6 +31,36 @@ public class ProduccionLecheRESTController {
         return new ResponseEntity<>(listado, HttpStatus.OK);
     }
 
+    @GetMapping("/animal/{idAnimal}")
+    public ResponseEntity<List<ProduccionLeche>> getProduccionLecheByIdAnimal(@PathVariable Long idAnimal){
+        List<ProduccionLeche> produccionesAnimal = this.produccionLecheService.getProduccionLecheByIdAnimal(idAnimal);
+        if(produccionesAnimal.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }else{
+            return new ResponseEntity<>(produccionesAnimal, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping("/finca/{idFinca}")
+    public ResponseEntity<List<ProduccionLeche>> getProduccionLecheByIdFinca(@PathVariable Long idFinca){
+        List<ProduccionLeche> produccionesFinca = this.produccionLecheService.getProduccionLecheByIdFinca(idFinca);
+        if(produccionesFinca.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }else{
+            return new ResponseEntity<>(produccionesFinca, HttpStatus.OK);
+        }
+    }
+
+    @GetMapping("/lote/{idLote}")
+    public ResponseEntity<List<ProduccionLeche>> getProduccionLecheByIdLote(@PathVariable Long idLote){
+        List<ProduccionLeche> produccionesLote = this.produccionLecheService.getProduccionLecheByIdLote(idLote);
+        if(produccionesLote.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }else{
+            return new ResponseEntity<>(produccionesLote, HttpStatus.OK);
+        }
+    }
+    
     @GetMapping("/{id}")
     public ResponseEntity<ProduccionLeche> getProduccionLecheById(@PathVariable Long id) {
         Optional<ProduccionLeche> produccionLeche = this.produccionLecheService.getProduccionLecheById(id);
